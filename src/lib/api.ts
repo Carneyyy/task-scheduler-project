@@ -70,11 +70,22 @@ export const nodeApi = {
   executeNode: (id: string) => api.post<ApiResponse>(`/nodes/${id}/execute`),
 };
 
+export const spiderApi = {
+  getSpiders: (params?: any) => api.get<ApiResponse<any>>("/spiders", { params }),
+  getSpider: (id: string) => api.get<ApiResponse>(`/spiders/${id}`),
+  createSpider: (data: any) => api.post<ApiResponse<any>>("/spiders", data),
+  updateSpider: (id: string, data: any) => api.put<ApiResponse<any>>(`/spiders/${id}`, data),
+  deleteSpider: (id: string) => api.delete<ApiResponse>(`/spiders/${id}`),
+  startSpider: (id: string) => api.post<ApiResponse>(`/spiders/${id}/start`),
+  stopSpider: (id: string) => api.post<ApiResponse>(`/spiders/${id}/stop`),
+  getSpiderStatus: (id: string) => api.get<ApiResponse>(`/spiders/${id}/status`),
+};
+
 export const authApi = {
   login: (credentials: any) => api.post<ApiResponse>("/auth/login", credentials),
   logout: () => api.post<ApiResponse>("/auth/logout"),
   refreshToken: () => api.post<ApiResponse>("/auth/refresh"),
-  getProfile: () => api.get<ApiResponse>("/auth/profile"),
+  getProfile: () => api.get<ApiResponse>("/auth/me"),
 };
 
 export const userApi = {
