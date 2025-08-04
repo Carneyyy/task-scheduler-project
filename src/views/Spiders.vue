@@ -20,7 +20,7 @@
             <button @click="editSpider(spider)" class="edit-btn">编辑</button>
             <button @click="deleteSpider(spider.id)" class="delete-btn">删除</button>
             <button @click="runSpider(spider)" class="run-btn">运行</button>
-            <button @click="stopSpider(spider)" class="stop-btn" :disabled="spider.status !== \"RUNNING\"">停止</button>
+            <button @click="stopSpider(spider)" class="stop-btn" :disabled="spider.status !== 'RUNNING'">停止</button>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@
           </div>
           <div class="info-item">
             <span class="label">状态:</span>
-            <span class="value" :class="profile.is_active ? "active" : "inactive"">
+            <span class="value" :class="profile.is_active ? 'active' : 'inactive'">
               {{ profile.is_active ? "活跃" : "禁用" }}
             </span>
           </div>
@@ -102,9 +102,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
 import { api } from "@/lib/api"
-import { useAuthStore } from "@/stores/auth"
 
-const authStore = useAuthStore()
 
 const profile = ref({
   username: "",

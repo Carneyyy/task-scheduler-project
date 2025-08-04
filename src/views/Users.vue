@@ -28,7 +28,7 @@
                 <span class="role" :class="user.role">{{ user.role }}</span>
               </td>
               <td>
-                <span class="status" :class="user.is_active ? "active" : "inactive"">
+                <span class="status" :class="user.is_active ? 'active' : 'inactive'">
                   {{ user.is_active ? "活跃" : "禁用" }}
                 </span>
               </td>
